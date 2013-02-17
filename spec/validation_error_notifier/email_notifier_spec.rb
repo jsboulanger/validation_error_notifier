@@ -14,7 +14,7 @@ describe ValidationErrorNotifier::EmailNotifier do
 
   before do
     ValidationErrorNotifier::EmailNotifier.any_instance.stub(:build_request).and_return(stub('Request',
-        :params => {
+        :filtered_parameters => {
           :controller => "FooController",
           :action => "create"
         }))

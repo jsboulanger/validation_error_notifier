@@ -52,7 +52,7 @@ describe ValidationErrorNotifier::EmailNotifier do
       end
 
       it "shows attributes with errors in bold" do
-        body.should include("<li style=\"font-weight: bold; color: #b94a48\">email:  [&quot;can't be blank&quot;]</li>")
+        body.should include("<li style=\"font-weight: bold; color: #b94a48\">email:  [&quot;can&#x27;t be blank&quot;]</li>")
       end
 
     end
@@ -70,7 +70,7 @@ describe ValidationErrorNotifier::EmailNotifier do
       end
 
       it "shows attributes with errors" do
-        body.should include("*** email:  [&quot;can't be blank&quot;]")
+        body.should include("*** email:  [&quot;can&#x27;t be blank&quot;]")
       end
 
     end

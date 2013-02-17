@@ -11,9 +11,9 @@ Gem::Specification.new do |gem|
 
   gem.require_path = 'lib'
 
-  gem.add_dependency "actionmailer", ">=3.2.6"
-  gem.add_development_dependency "rails", ">= 3.2.6"
-  gem.add_development_dependency "sqlite3", ">= 1.3.4"
+  gem.add_dependency "actionmailer", ">=3.0"
+  gem.add_development_dependency "rails", ">= 3.0"
+  gem.add_development_dependency "sqlite3", ">= 1.3"
   gem.add_development_dependency 'rake'
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "rspec-rails"

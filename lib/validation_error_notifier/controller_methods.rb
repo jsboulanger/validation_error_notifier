@@ -5,8 +5,12 @@ module ValidationErrorNotifier
     module ClassMethods
 
       # Call in app controllers to check for validation errors on actions.
-      def notify_validation_errors(options = {})
+      def notify_validation_error(options = {})
         after_filter :check_for_validation_errors, options
+      end
+
+      def skip_notify_validation_error(options = {})
+        skip_after_filter :check_for_validation_errors, options
       end
 
     end

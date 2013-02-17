@@ -1,0 +1,5 @@
+<p><%= @records.map(&:class).join(", ") %> validation failed in <%= @controller_action %></p>
+<%= render :partial => "email_notifier/record", :collection => @records %>
+
+<h3>------------------------------- Params</h3>
+<pre><%= @request.params.inspect %></pre>

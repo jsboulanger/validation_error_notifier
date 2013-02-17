@@ -1,0 +1,8 @@
+---- <%= record.class %> has <%= pluralize record.errors.size, "error" %> ----
+<% record.attributes.each do |key, value| %>
+  <% if record.errors[key].present? %>
+*** <%= "#{key}: #{value} #{record.errors[key]}" %> ***
+  <% else %>
+    <%= "#{key}: #{value}" %>
+  <% end %>
+<% end %>

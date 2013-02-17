@@ -14,7 +14,8 @@ describe ValidationErrorNotifier::EmailNotifier do
 
   before do
     ValidationErrorNotifier::EmailNotifier.any_instance.stub(:build_request).and_return(stub('Request',
-        :filtered_parameters => {
+        :filtered_parameters => {},
+        :params => {
           :controller => "FooController",
           :action => "create"
         }))
@@ -35,7 +36,7 @@ describe ValidationErrorNotifier::EmailNotifier do
 
       its(:from) { should == ["notifier@example.com"] }
       its(:to) { should == ["recipient@example.com"] }
-      its(:subject) { should == "SUBPREFIX FooController#create FooModel validation failed" }
+      its(:subject) { should == "SUBPREFIX FooController#create has validation errors" }
 
     end
 

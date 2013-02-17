@@ -70,8 +70,7 @@ module ValidationErrorNotifier
     def compose_subject
       subject = "#{@options[:subject_prefix]}"
       subject << " #{@controller_action}"
-      subject << " " + @records.map(&:class).join(", ") if @records
-      subject << " validation failed"
+      subject << " has validation errors"
     end
   end
 end

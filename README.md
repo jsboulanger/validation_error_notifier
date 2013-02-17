@@ -51,7 +51,7 @@ enabled using :only and :except :
 
 ```ruby
 class PostsController < ApplicationController
-  notify_validation_errors, :only => [:create]
+  notify_validation_errors :only => [:create]
 end
 ```
 

@@ -14,12 +14,15 @@ for a small site, but doesn't scale.
 
 Add the gem to your project's Gemfile:
 
-  gem 'validation_error_notifier'
+```
+gem 'validation_error_notifier'
+```
 
 Install the gem
 
-  bundle install
-
+```
+bundle install
+```
 
 ## Configuration
 

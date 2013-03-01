@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20120728233301) do
 
   create_table "posts", :force => true do |t|
     t.string   "name"
+    t.string   "secret"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

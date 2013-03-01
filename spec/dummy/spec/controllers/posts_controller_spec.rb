@@ -59,6 +59,24 @@ describe PostsController do
         ValidationErrorNotifier.notifier.should_receive(:notify).once.and_return double("Email", :deliver => true)
         post :create, {:post => {}}, valid_session
       end
+
+      describe "the email notification" do
+
+        before do
+          post :create, {:post => { :secret => "MY_LITTLE_SECRET" } }, valid_session
+        end
+
+        subject(:email) { assigns(:_validation_error_notification) }
+
+        its(:subject) { should == "[DUMMY] posts#create has validation errors" }
+        its(:from) { should == ["notifier@example.com"] }
+        its(:to) { should == ["js@example.com"] }
+
+        it "does not contain sensitive parameters" do
+          email.html_part.body.should_not include("MY_LITTLE_SECRET")
+        end
+
+      end
     end
   end
 end

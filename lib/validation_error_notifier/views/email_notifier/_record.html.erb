@@ -2,9 +2,7 @@
 <ul>
 <% record.attributes.each do |key, value| %>
   <% if record.errors[key].present? %>
-    <%= content_tag(:li, "#{key}: #{value} #{record.errors[key]}", :style => "font-weight: bold; color: #b94a48") %>
-  <% else %>
-    <%= content_tag(:li, "#{key}: #{value}") %>
+    <%= content_tag(:li, "#{key} #{record.errors[key]}", :style => "font-weight: bold; color: #b94a48") %>
   <% end %>
 <% end %>
 </ul>

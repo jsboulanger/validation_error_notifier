@@ -48,12 +48,13 @@ describe ValidationErrorNotifier::EmailNotifier do
         body.should include("FooModel has 1 error")
       end
 
-      it "shows attributes without errors" do
-        body.should include("<li>name: Pablo</li>")
+      it "does not show attributes without errors" do
+        body.should_not include("name")
+        body.should_not include("Pablo")
       end
 
       it "shows attributes with errors in bold" do
-        body.should include("<li style=\"font-weight: bold; color: #b94a48\">email:  [&quot;can&#x27;t be blank&quot;]</li>")
+        body.should include("<li style=\"font-weight: bold; color: #b94a48\">email [&quot;can't be blank&quot;]</li>")
       end
 
     end
@@ -66,12 +67,13 @@ describe ValidationErrorNotifier::EmailNotifier do
         body.should include("FooModel has 1 error")
       end
 
-      it "shows attributes without errors" do
-        body.should include("  name: Pablo")
+      it "doesn not show attributes without errors" do
+        body.should_not include("name")
+        body.should_not include("Pablo")
       end
 
       it "shows attributes with errors" do
-        body.should include("*** email:  [&quot;can&#x27;t be blank&quot;]")
+        body.should include("*** email [&quot;can't be blank&quot;]")
       end
 
     end

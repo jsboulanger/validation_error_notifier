@@ -1,14 +1,16 @@
 # Validation Error Notifier
 
 Validation error notifier helps you uncover user experience
-issues in your Ruby on Rails forms. The gem detects and notifies
+issues quickly in your Ruby on Rails forms. The gem detects and notifies
 you when a form submission fails because of an invalid model.
 Strict model validation keeps your data clean, but it introduces
 friction in your forms. Keep your users happy by reducing that
 friction.
 
-The gem currently only supports email notifications. It works
-for a small site, but doesn't scale.
+The gem currently only supports email notifications. It is useful
+at the beginning of a project to uncover major ux issues in your forms,
+but as your app get some traction you might want to track your full
+funnel in another tool that scales better.
 
 ## Installation
 

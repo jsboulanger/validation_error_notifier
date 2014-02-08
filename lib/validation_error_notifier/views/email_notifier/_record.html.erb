@@ -1,8 +1,6 @@
 <h3><%= record.class %> has <%= pluralize record.errors.size, "error" %></h3>
 <ul>
-<% record.attributes.each do |key, value| %>
-  <% if record.errors[key].present? %>
-    <%= content_tag(:li, "#{key} #{record.errors[key]}", :style => "font-weight: bold; color: #b94a48") %>
-  <% end %>
+<% record.errors.each do |attr, msg| %>
+  <%= content_tag(:li, "#{attr} #{msg}", :style => "font-weight: bold; color: #b94a48") %>
 <% end %>
 </ul>

@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name        = 'validation_error_notifier'
-  gem.version     = '0.0.1'
+  gem.version     = '0.0.2'
   gem.description = 'A notifier for form validation errors.'
   gem.authors     = ['Jean-Sebastien Boulanger']
   gem.email       = ['jsboulanger@gmail.com']

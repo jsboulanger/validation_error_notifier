@@ -19,7 +19,12 @@ module ValidationErrorNotifier
 
     def check_for_validation_errors
       if !ignore_validation_errors? && records_with_errors.present?
-        @_validation_error_notification = ValidationErrorNotifier.notifier.notify(request.env, records_with_errors)
+        env = request.env
+
+        user = self.current_user rescue nil
+        env = env.merge('current_user' => user) if user
+
+        @_validation_error_notification = ValidationErrorNotifier.notifier.notify(env, records_with_errors)
       end
     end
 

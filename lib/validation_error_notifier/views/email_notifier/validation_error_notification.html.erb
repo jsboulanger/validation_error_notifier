@@ -3,3 +3,8 @@
 
 <h3>------------------------------- Params</h3>
 <pre><%= @params.inspect %></pre>
+
+<% if @user %>
+  <h3>------------------------------- User</h3>
+  <pre><%= @user.inspect %></pre>
+<% end %>

@@ -52,6 +52,7 @@ module ValidationErrorNotifier
       @options = options.reverse_merge(self.class.default_options)
       @request = build_request(env)
       @params  = @request.filtered_parameters
+      @user    = @env['current_user']
       @controller_action = "#{@request.params[:controller]}##{@request.params[:action]}"
 
       mail(:to   => @options[:recipients],

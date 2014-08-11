@@ -2,5 +2,10 @@
 
 <%= render :partial => "email_notifier/record", :collection => @records %>
 
->------------------------------- Params
+------------------------------- Params
 <%= @params.inspect %>
+
+<% if @user %>
+------------------------------- User
+<%= @user.inspect %>
+<% end %>
